@@ -1,5 +1,9 @@
 class Film < ApplicationRecord
   belongs_to :film_category
+  has_one_attached :main_photo
+  has_many_attached :photos
+
+
 
   # validates :finished, presence: true
   # validates :in_production, presence: true

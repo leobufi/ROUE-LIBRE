@@ -1,6 +1,8 @@
 class Character < ApplicationRecord
 
   belongs_to :about
+  has_one_attached :main_photo
+
 
   validates :title, presence: true
   validates :description, presence: true
