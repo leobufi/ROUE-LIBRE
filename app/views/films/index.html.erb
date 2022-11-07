@@ -1,0 +1,23 @@
+<div>
+  <% @film_categories.each do |category| %>
+      <span><%= category.title %></span>
+  <% end %>
+  <br>
+  <span>Terminé - En cours de production</span>
+</div>
+<div>
+  <h1>Catalogue</h1>
+</div>
+<hr>
+<div>
+  <% @films.each do |film| %>
+    <div>
+      <%= link_to film_path(film) do %>
+        <h3><%= film.title %></h3>
+        <p><%= film.description %></p>
+        <span><%= film.duration %> - <%= film.year %> - <%= film.film_category.title %> - <% if film.finished? %> Terminé <% end %> <% if film.in_production? %> En cours de production <% end %></span>
+      <% end %>
+    </div>
+    <hr>
+  <% end  %>
+</div>
